@@ -13,14 +13,14 @@
     <ion-card-content>
       <ion-item>
         <ion-label>Nome:</ion-label>
-        <ion-input placeholder="Digite seu nome:"></ion-input>
+        <ion-input [(ngModel)]="usuario.nome" placeholder="Digite seu nome:"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Idade:</ion-label>
-        <ion-input type="number" placeholder="Digite a sua idade:"></ion-input>
+        <ion-input [(ngModel)]="usuario.idade" type="number" placeholder="Digite a sua idade:"></ion-input>
       </ion-item>
       <ion-button expand="block">Cadastrar Usuário</ion-button>
-      <ion-button expand="block">Limpar Campos</ion-button>
+      <ion-button expand="block" (click)="limparFormulario()">Limpar Campos</ion-button>
 
     </ion-card-content>
 
