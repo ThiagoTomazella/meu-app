@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Usuario{
+  nome:string;
+  idade:number;
+}
+
 @Component({
   selector: 'app-cadastro-usuario',
   templateUrl: './cadastro-usuario.page.html',
