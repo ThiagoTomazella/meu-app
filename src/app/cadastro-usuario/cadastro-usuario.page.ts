@@ -13,6 +13,32 @@ interface Usuario{
 })
 export class CadastroUsuarioPage implements OnInit {
 
+  usuario = {
+    nome: '',
+    idade: null as number | null,
+  }
+
+  usuariosCadastrados: Usuario[]=[];
+
+  cadastrarUsuario(){
+    const nome = this.usuario.nome.trim();
+    const idade = this.usuario.idade;
+
+    if(!nome || idade === null || idade < 0){
+      return;
+    }
+
+    this.usuariosCadastrados.unshift({nome, idade});
+    this.limparFormulario();
+  }
+
+  limparFormulario(){
+    this.usuario ={
+      nome:'',
+      idade:null,
+    };
+  }
+
   constructor() { }
 
   ngOnInit() {
