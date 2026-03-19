@@ -19,10 +19,26 @@
         <ion-label>Idade:</ion-label>
         <ion-input [(ngModel)]="usuario.idade" type="number" placeholder="Digite a sua idade:"></ion-input>
       </ion-item>
-      <ion-button expand="block">Cadastrar Usuário</ion-button>
+      <ion-button expand="block" (click)="cadastrarUsuario()">Cadastrar Usuário</ion-button>
       <ion-button expand="block" (click)="limparFormulario()">Limpar Campos</ion-button>
 
     </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Listagem de alunos</ion-card-title>
+    </ion-card-header>
+    <ion-list *ngIf="usuariosCadastrados.length > 0;">
+
+      <ion-item *ngFor="let item of usuariosCadastrados; let i = index;">
+        <ion-label>{{ item.nome }}</ion-label>
+        <p>{{ item.idade }}</p>
+      </ion-item>  
+
+    </ion-list>
+
 
   </ion-card>
 
