@@ -33,8 +33,9 @@
     <ion-list *ngIf="usuariosCadastrados.length > 0;">
 
       <ion-item *ngFor="let item of usuariosCadastrados; let i = index;">
-        <ion-label>{{ item.nome }}</ion-label>
+        <ion-label>{{ i + 1 }}.  {{ item.nome }}</ion-label>
         <p>{{ item.idade }}</p>
+        <ion-button fill="clear" color="danger" slot="end" (click)="excluirUsuario(i)">Excluir</ion-button>
       </ion-item>  
 
     </ion-list>

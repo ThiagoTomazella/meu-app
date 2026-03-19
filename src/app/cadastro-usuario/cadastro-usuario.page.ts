@@ -32,6 +32,10 @@ export class CadastroUsuarioPage implements OnInit {
     this.limparFormulario();
   }
 
+  excluirUsuario(index:number){
+    this.usuariosCadastrados.splice(index, 1)
+  }
+
   limparFormulario(){
     this.usuario ={
       nome:'',
